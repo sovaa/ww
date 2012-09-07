@@ -20,75 +20,75 @@ public class Place extends Common implements Serializable {
     private static final long serialVersionUID = 6641774078836589909L;
     
     private static final Logger LOG = new Logger(Place.class);
-	
-	private String name;
-	private String description;
-	private String mainKey;
-	
-	private Set<String> keys;
-	private Set<String> connectingPlaces;
+    
+    private String name;
+    private String description;
+    private String mainKey;
+    
+    private Set<String> keys;
+    private Set<String> connectingPlaces;
     private Map<String, Character> characters;
     private Map<String, String> kickableEntrances;
     private List<Item> objects;
-	
-	private String lookDescription;
-	
-	// chance of discovery when exploring
-	private int discoveryFrequency;
-	
-	// key needed to unlock door
-	private String keyId;
-	
-	private boolean discovered;
-	private boolean exit;
-	private boolean locked;
-	private boolean entranceKickable;
-	private boolean enterable;
-	private boolean safeRest;
-	private boolean restable;
+    
+    private String lookDescription;
+    
+    // chance of discovery when exploring
+    private int discoveryFrequency;
+    
+    // key needed to unlock door
+    private String keyId;
+    
+    private boolean discovered;
+    private boolean exit;
+    private boolean locked;
+    private boolean entranceKickable;
+    private boolean enterable;
+    private boolean safeRest;
+    private boolean restable;
     private boolean outdoors;
-	private Integer restCost;
-	
-	public Place() {
-		keys = new HashSet<String>();
-		characters = new HashMap<String, Character>();
-		connectingPlaces = new HashSet<String>();
-		kickableEntrances = new HashMap<String, String>();
-		objects = new ArrayList<Item>();
-		
-		exit = false;
-		discovered = false;
-		discoveryFrequency = 100;
-		safeRest = false;
-		restable = true;
-		restCost = 0;
-		outdoors = true;
-		locked = false;
-		entranceKickable = false;
-		enterable = true;
-	}
-	
-	public void visit(Player player) {
-	    // to be overwritten
-	}
-	
-	public void addCharacter(String key, Character character) {
-		if (!characters.containsKey(key)) {
-		    characters.put(key, character);
-		}
+    private Integer restCost;
+    
+    public Place() {
+    	keys = new HashSet<String>();
+    	characters = new HashMap<String, Character>();
+    	connectingPlaces = new HashSet<String>();
+    	kickableEntrances = new HashMap<String, String>();
+    	objects = new ArrayList<Item>();
+    	
+    	exit = false;
+    	discovered = false;
+    	discoveryFrequency = 100;
+    	safeRest = false;
+    	restable = true;
+    	restCost = 0;
+    	outdoors = true;
+    	locked = false;
+    	entranceKickable = false;
+    	enterable = true;
+    }
+    
+    public void visit(Player player) {
+        // to be overwritten
+    }
+    
+    public void addCharacter(String key, Character character) {
+    	if (!characters.containsKey(key)) {
+    	    characters.put(key, character);
+    	}
         
-		if (!Area.hasGlobalCharacter(key)) {
-		    Area.addGlobalCharacter(key, character);
-		}
-	}
-	
-	public Character getCharacter(String key) {
-		return characters.get(key);
-	}
-	
-	public boolean isDiscovered() {
-		return discovered;
-	}
+    	if (!Area.hasGlobalCharacter(key)) {
+    	    Area.addGlobalCharacter(key, character);
+    	}
+    }
+    
+    public Character getCharacter(String key) {
+    	return characters.get(key);
+    }
+    
+    public boolean isDiscovered() {
+    	return discovered;
+    }
 
     public void setDiscovered(boolean discovered) {
         setDiscovered(discovered, true);
@@ -101,16 +101,16 @@ public class Place extends Common implements Serializable {
             info("You have discovered a new place in this in this area called " + name + "!");
         }
     }
-	
-	public int getDiscoveryFrequency() {
-		return discoveryFrequency;
-	}
+    
+    public int getDiscoveryFrequency() {
+    	return discoveryFrequency;
+    }
 
-	public void setDiscoveryFrequency(int discoveryFrequency) {
-		this.discoveryFrequency = discoveryFrequency;
-	}
-	
-	public boolean isExit() {
+    public void setDiscoveryFrequency(int discoveryFrequency) {
+    	this.discoveryFrequency = discoveryFrequency;
+    }
+    
+    public boolean isExit() {
         return exit;
     }
 
@@ -119,32 +119,32 @@ public class Place extends Common implements Serializable {
     }
 
     public String getLookDescription() {
-		return lookDescription;
-	}
+    	return lookDescription;
+    }
 
-	public void setLookDescription(String lookDescription) {
-		this.lookDescription = lookDescription;
-	}
+    public void setLookDescription(String lookDescription) {
+    	this.lookDescription = lookDescription;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+    	return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+    	this.name = name;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+    	return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+    	this.description = description;
+    }
 
-	public Map<String, Character> getCharacters() {
-		return characters;
-	}
+    public Map<String, Character> getCharacters() {
+    	return characters;
+    }
     
     public Set<String> getKnownConnectingPlacesKeys() {
         Set<String> keys = new HashSet<String>();
@@ -166,42 +166,42 @@ public class Place extends Common implements Serializable {
         
         return keys;
     }
-	
-	public Map<String, Character> getDiscoveredCharacters() {
-		if (characters == null || characters.size() == 0) {
-			return new HashMap<String, Character>();
-		}
-		
-		Map<String, Character> discovered = new HashMap<String, Character>();
-		
-		for (Entry<String, Character> entry : characters.entrySet()) {
-			if (entry.getValue().isDiscovered()) {
-				discovered.put(entry.getKey(), entry.getValue());
-			}
-		}
-		
-		return discovered;
-	}
+    
+    public Map<String, Character> getDiscoveredCharacters() {
+    	if (characters == null || characters.size() == 0) {
+    		return new HashMap<String, Character>();
+    	}
+    	
+    	Map<String, Character> discovered = new HashMap<String, Character>();
+    	
+    	for (Entry<String, Character> entry : characters.entrySet()) {
+    		if (entry.getValue().isDiscovered()) {
+    			discovered.put(entry.getKey(), entry.getValue());
+    		}
+    	}
+    	
+    	return discovered;
+    }
 
-	public void setCharacters(Map<String, Character> characters) {
-		this.characters = characters;
-	}
+    public void setCharacters(Map<String, Character> characters) {
+    	this.characters = characters;
+    }
 
-	public String getMainKey() {
-		return mainKey;
-	}
+    public String getMainKey() {
+    	return mainKey;
+    }
 
-	public void setMainKey(String mainKey) {
-		this.mainKey = mainKey;
-	}
-	
-	public void setKeys(String[] keys) {
-		this.keys = new HashSet<String>(Arrays.asList(keys));
-	}
-	
-	public Set<String> getKeys() {
-		return keys;
-	}
+    public void setMainKey(String mainKey) {
+    	this.mainKey = mainKey;
+    }
+    
+    public void setKeys(String[] keys) {
+    	this.keys = new HashSet<String>(Arrays.asList(keys));
+    }
+    
+    public Set<String> getKeys() {
+    	return keys;
+    }
 
     public boolean isSafeRest() {
         return safeRest;

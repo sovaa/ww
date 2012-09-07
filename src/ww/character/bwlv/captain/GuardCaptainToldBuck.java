@@ -30,10 +30,10 @@ public class GuardCaptainToldBuck {
         };
         
         told.greet(String.format("%s! There you are, good to see you again! We found the " +
-        		"little bastard! %s is in the jail now, awaiting execution for his crimes. " +
-        		"Thanks for your help, son. Go and see him if you wish, the jail is over there, " +
-        		"by the church. Can't miss it.", 
-        		playerName, mareks));
+            	"little bastard! %s is in the jail now, awaiting execution for his crimes. " +
+            	"Thanks for your help, son. Go and see him if you wish, the jail is over there, " +
+            	"by the church. Can't miss it.", 
+            	playerName, mareks));
         
         Conversation will = new Conversation() {
             private static final long serialVersionUID = 6166181701394168848L;

@@ -44,20 +44,20 @@ public class BuckGordonDead {
                     Quest quest = player.getQuest(Quest.BUCK_BEAT_UP_MAREK_DRAVIS);
                     
                     quest.update(String.format("I told %s about finding %s dead and %s being on the run. %s " +
-                    		"suddently wanted me to forget about this whole mess. I bet there is more " +
-                    		"going on here than he's letting me in on. Maybe I should get back to %s and " +
-                    		"see if he needs any help tracking down %s.",
-                    		buck, gordons, mareks, buck, johns, mareks));
+                        	"suddently wanted me to forget about this whole mess. I bet there is more " +
+                        	"going on here than he's letting me in on. Maybe I should get back to %s and " +
+                        	"see if he needs any help tracking down %s.",
+                        	buck, gordons, mareks, buck, johns, mareks));
                     
                     quest.setState(BeatUpMarekDravis.States.TOLD_BUCK_GORDON_DEAD);
                 }
             };
             
             dead.setReply(String.format("Actually, I told %s you had some " +
-            		"trouble with him, and he sent one of his men--%s--to speak to %s, but it looks " +
-            		"like %s killed %s, and is now on the run. %ss men are out looking for him. " +
-            		"%s also told me to ask you to keep an eye out for him.", 
-            		johns, gordon, mareks, gordons, johns, johns, mareks));
+                	"trouble with him, and he sent one of his men--%s--to speak to %s, but it looks " +
+                	"like %s killed %s, and is now on the run. %ss men are out looking for him. " +
+                	"%s also told me to ask you to keep an eye out for him.", 
+                	johns, gordon, mareks, gordons, johns, johns, mareks));
             
             dead.end("Ye gods... Better forget about this son, this is getting out of hand. You should leave.");
             

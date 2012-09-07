@@ -25,19 +25,19 @@ import ww.quests.bwlv.BeatUpMarekDravis;
 
 public class Buck extends Character {
     private static final long serialVersionUID = -309133046957338301L;
-	
-	public Buck(Place place) {
-	    setPlace(place);
-		
-	    id = CharacterKeys.BlackWater.BUCK;
-	    name = CharacterNames.BlackWater.BUCK;
+    
+    public Buck(Place place) {
+        setPlace(place);
+    	
+        id = CharacterKeys.BlackWater.BUCK;
+        name = CharacterNames.BlackWater.BUCK;
         description = "A strongly build man, well past his fiftith " +
                 "winter, with a grim, weather-worn face.";
         
-		discovered = true;
-		tradable = true;
-		
-		inventory.addItem(new Gold(180));
+    	discovered = true;
+    	tradable = true;
+    	
+    	inventory.addItem(new Gold(180));
         inventory.addItem(ItemGenerator.generateChest(6));
         
         aliases = new HashSet<String>(Arrays.asList(new String[]{
@@ -84,22 +84,22 @@ public class Buck extends Character {
         BuckHelp.create(intro);
         BuckMarek.create(intro);
         BuckLetGo.create(intros);
-		
-		{
-			Conversation gossip = intro.reply("Gossip");
-			gossip.greet("I don't do gossip. Speak with the old ladies in the marketplace for that.");
-			gossip.reply("Will do", intro);
-		}
-		
-		{
-			Conversation bye = intro.reply("Bye");
-			bye.end("Until next time.");
-		}
-	}
+    	
+    	{
+    		Conversation gossip = intro.reply("Gossip");
+    		gossip.greet("I don't do gossip. Speak with the old ladies in the marketplace for that.");
+    		gossip.reply("Will do", intro);
+    	}
+    	
+    	{
+    		Conversation bye = intro.reply("Bye");
+    		bye.end("Until next time.");
+    	}
+    }
 
-	@Override
-	public void fight(Player player) {
-	}
+    @Override
+    public void fight(Player player) {
+    }
 
     @Override
     public void setPlace(Place place) {

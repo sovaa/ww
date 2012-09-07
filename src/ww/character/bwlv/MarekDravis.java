@@ -18,12 +18,12 @@ import ww.player.Player;
 
 public class MarekDravis extends Character {
     private static final long serialVersionUID = 5944139697870049625L;
-	
-	public MarekDravis(Player player, Place place) {
-	    setPlace(place);
-	    
-	    id = CharacterKeys.BlackWater.MAREK_DRAVIS;
-		name = CharacterNames.BlackWater.MAREK_DRAVIS;
+    
+    public MarekDravis(Player player, Place place) {
+        setPlace(place);
+        
+        id = CharacterKeys.BlackWater.MAREK_DRAVIS;
+    	name = CharacterNames.BlackWater.MAREK_DRAVIS;
         
         description = 
             "Marek... At first sight you get a feeling " +
@@ -38,21 +38,21 @@ public class MarekDravis extends Character {
         inventory.addItem(new Gold(86));
         inventory.addItem(new StoneInsignia());
         inventory.addItem(ItemGenerator.generateChest(3));
-		
-		aliases = new HashSet<String>(Arrays.asList(new String[]{
-		        "marek",
-		        "dravis",
-		        "marek dravis",
-		}));
-		
-		MarekIntro.create(intros);
-		MarekInJail.create(intros);
-		MarekInJailWaiting.create(intros);
-	}
-	
-	@Override
-	public void fight(Player player) {
-	}
+    	
+    	aliases = new HashSet<String>(Arrays.asList(new String[]{
+    	        "marek",
+    	        "dravis",
+    	        "marek dravis",
+    	}));
+    	
+    	MarekIntro.create(intros);
+    	MarekInJail.create(intros);
+    	MarekInJailWaiting.create(intros);
+    }
+    
+    @Override
+    public void fight(Player player) {
+    }
 
     @Override
     public void setPlace(Place place) {

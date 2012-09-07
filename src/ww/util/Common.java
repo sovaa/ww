@@ -475,11 +475,11 @@ public class Common extends Input {
         
         return false;
     }
-	
-	public static final DialogResult dialogue(String title, String question, DialogButtons type) {
-	    DialogResult box;
-	    
-	    try {
+    
+    public static final DialogResult dialogue(String title, String question, DialogButtons type) {
+        DialogResult box;
+        
+        try {
             box = MessageBox.showMessageBox(lanternTerminal.getGUIScreen(), 
                     title, question, type);
             
@@ -489,7 +489,7 @@ public class Common extends Input {
             LOG.error(e.getMessage(), e);
             return null;
         }
-	    
+        
         return box;
-	}
+    }
 }

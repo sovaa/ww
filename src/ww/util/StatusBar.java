@@ -145,16 +145,16 @@ public class StatusBar extends Common implements Runnable {
         int diff = (int)current;
         
         if (lastPhase == null) {
-        	lastPhase = Phase.forTime(diff);
+            lastPhase = Phase.forTime(diff);
         }
         else {
-        	Phase phase = Phase.forTime(diff);
-        	
-        	if (phase.equals(Phase.NIGHT) && lastPhase.equals(Phase.DUSK)) {
-        		calendarDisplay.tick();
-        	}
-        	
-        	lastPhase = phase;
+            Phase phase = Phase.forTime(diff);
+            
+            if (phase.equals(Phase.NIGHT) && lastPhase.equals(Phase.DUSK)) {
+            	calendarDisplay.tick();
+            }
+            
+            lastPhase = phase;
         }
         
         String phase = Phase.forTime(diff).toString();

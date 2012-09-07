@@ -121,7 +121,7 @@ public class Rest extends Common {
         println(" <WILDERNESS SURVIVAL>");
         
         info("Before you go to sleep you find some berries and roots " +
-        		"to use for breakfast in the morning.");
+            	"to use for breakfast in the morning.");
         
         println();
         

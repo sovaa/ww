@@ -16,21 +16,21 @@ public class CalendarDisplay implements Serializable {
     private int date;
     
     private String[] days = { "Morndas" , "Tirdas", "Middas", "Turdas",
-    						  "Fredas", "Loredas", "Sundas"};
+        					  "Fredas", "Loredas", "Sundas"};
     
     private String[] months = { "Morning Star", "Sun's Dawn", "First Seed", "Rain's Hand",
-    							"Second Seed", "Midyear", "Sun's Height", "Last Seed", "Hearthfire",
-    							"Frostfall", "Sun's Dusk", "Evening Star"};
+        						"Second Seed", "Midyear", "Sun's Height", "Last Seed", "Hearthfire",
+        						"Frostfall", "Sun's Dusk", "Evening Star"};
     
     private String[] seasons = { "Winter", "Spring", "Summer", "Fall"};
     
     public CalendarDisplay() {
-    	day = new Calendar(7);
-    	month = new Calendar(12);
-    	season = new Calendar(4);
-    	year = new Calendar(2012);
-    	setDate(5,29,0,0,1012);
-    	updateDisplay();
+        day = new Calendar(7);
+        month = new Calendar(12);
+        season = new Calendar(4);
+        year = new Calendar(2012);
+        setDate(5,29,0,0,1012);
+        updateDisplay();
     }
     
     public String tickFuture(int days) {
@@ -55,40 +55,40 @@ public class CalendarDisplay implements Serializable {
     }
     
     private Integer tick(Integer date, Calendar day, Calendar month, Calendar season, Calendar year) {
-    	if (date < 30) {
-    		date++;
-    	}
-    	else {
-    		date = 1;
-    	}
-    	
-    	day.increment();
-    	
-    	if(date == 1) {
-    		month.increment();
-    		
-    		if(month.getValue() == 3 || month.getValue() == 6 || month.getValue() == 9 || month.getValue() == 12) {
-    			season.increment();
-    			
-    			if(season.getValue() == 0) {
-    				year.increment();
-    			}
-    		}
-    	}
-    	
-    	return date;
+        if (date < 30) {
+        	date++;
+        }
+        else {
+        	date = 1;
+        }
+        
+        day.increment();
+        
+        if(date == 1) {
+        	month.increment();
+        	
+        	if(month.getValue() == 3 || month.getValue() == 6 || month.getValue() == 9 || month.getValue() == 12) {
+        		season.increment();
+        		
+        		if(season.getValue() == 0) {
+        			year.increment();
+        		}
+        	}
+        }
+        
+        return date;
     }
     
     public void setDate(int day, int date, int month, int season, int year) {
-    	this.day.setValue(day);
-    	this.date = date;
-    	this.month.setValue(month);
-    	this.season.setValue(season);
-    	this.year.setValue(year);
+        this.day.setValue(day);
+        this.date = date;
+        this.month.setValue(month);
+        this.season.setValue(season);
+        this.year.setValue(year);
     }
     
     public String getDate() {
-    	return displayString;
+        return displayString;
     }
     
     private boolean endsIn(int i, int j) {
@@ -123,22 +123,22 @@ public class CalendarDisplay implements Serializable {
     
     private String updateDisplay(int date, String dateTh, Calendar day, Calendar month, Calendar season, Calendar year) {
         if (endsIn(date, 1)) {
-    		dateTh = date + "st";
-    	}
-    	else if (endsIn(date, 2)) {
-    		dateTh = date + "nd";
-    	}
-    	else if (endsIn(date, 3)) {
-    		dateTh = date + "rd";
-    	}
-    	else {
-    		dateTh = date + "th";
-    	}
-    	
-    	return days[day.getValue()] + " " +
-    		   dateTh + " of " +
-    		   months[month.getValue()] + ", " +
-			   seasons[season.getValue()] + " in the year " +
-			   year.getDisplayValue();
+        	dateTh = date + "st";
+        }
+        else if (endsIn(date, 2)) {
+        	dateTh = date + "nd";
+        }
+        else if (endsIn(date, 3)) {
+        	dateTh = date + "rd";
+        }
+        else {
+        	dateTh = date + "th";
+        }
+        
+        return days[day.getValue()] + " " +
+        	   dateTh + " of " +
+        	   months[month.getValue()] + ", " +
+    		   seasons[season.getValue()] + " in the year " +
+    		   year.getDisplayValue();
     }
 }

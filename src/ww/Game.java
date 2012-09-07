@@ -39,7 +39,7 @@ public class Game extends ActionHandler {
     
     public static Player player;
     
-	public static void main (String[] arg) throws IOException {
+    public static void main (String[] arg) throws IOException {
         try {
             new Game().main();
             
@@ -52,52 +52,52 @@ public class Game extends ActionHandler {
         }
     }
 
-	/**
-	 * Main game loop.
-	 * @throws LanternException 
-	 */
-	private void main() throws IOException, LanternException {
-	    gameInit();
-		
-		clear();
+    /**
+     * Main game loop.
+     * @throws LanternException 
+     */
+    private void main() throws IOException, LanternException {
+        gameInit();
+    	
+    	clear();
 
-		while (true) {
-		    look();
-		    places();
+    	while (true) {
+    	    look();
+    	    places();
             characters();
             loot();
             
             refresh();
             action(player);
-		}
-	}
-	
-	private void look() {
+    	}
+    }
+    
+    private void look() {
         Helper.lookDescription(player);
-	}
-	
-	private void places() {
+    }
+    
+    private void places() {
         Helper.knownPlaces(player);
-	}
-	
-	private void loot() {
+    }
+    
+    private void loot() {
         LootAction.lootableObjects(player);
-	}
-	
-	private void characters() {
+    }
+    
+    private void characters() {
         Helper.knownCharacters(player);
-	}
-	
-	private void gameInit() throws IOException {
-	    Common.init();
-	    Commands.init();
-	    CharacterNames.init();
-	    Reputation.init();
+    }
+    
+    private void gameInit() throws IOException {
+        Common.init();
+        Commands.init();
+        CharacterNames.init();
+        Reputation.init();
         
         player = initPlayer();
-	}
-	
-	private Player initPlayer() throws IOException {
+    }
+    
+    private Player initPlayer() throws IOException {
         Player player = new Player();
         StatusBar.execute(player);
         
@@ -124,22 +124,22 @@ public class Game extends ActionHandler {
         clear();
         
         return player;
-	}
-	
-	private Profession getProfession() throws IOException {
-	    Map<Integer, Object> professions = new HashMap<Integer, Object>();
-	    
-	    int i = 0;
-	    for (Profession profession : Profession.values()) {
-	        professions.put(i, profession);
-	        i++;
-	    }
-	    
-	    while (true) {
+    }
+    
+    private Profession getProfession() throws IOException {
+        Map<Integer, Object> professions = new HashMap<Integer, Object>();
+        
+        int i = 0;
+        for (Profession profession : Profession.values()) {
+            professions.put(i, profession);
+            i++;
+        }
+        
+        while (true) {
             clear();
             printbig(" What's your profession?");
             
-	        int choice = menu(professions);
+            int choice = menu(professions);
 
             if (!professions.containsKey(choice)) {
                 clear();
@@ -149,13 +149,13 @@ public class Game extends ActionHandler {
             }
             
             return (Profession)professions.get(choice);
-	    }
-	}
-	
-	private String getName() throws IOException {
+        }
+    }
+    
+    private String getName() throws IOException {
         clear();
         printbig(" What's your name?");
         
         return input();
-	}
+    }
 }

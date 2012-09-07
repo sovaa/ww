@@ -72,8 +72,8 @@ public class JailAlley extends Place {
 
         setName(PlaceNames.BlackWater.THE_JAIL_ALLEY);
         setDescription("Behind the Jail a narrow alley runs. No windows face the alley, " +
-        		"and the high buildings surrounding it prevents most light from reaching " +
-        		"the ground, covering the alley in darkness. A shady characters' perfect condition.");
+            	"and the high buildings surrounding it prevents most light from reaching " +
+            	"the ground, covering the alley in darkness. A shady characters' perfect condition.");
         
         setDiscoveryFrequency(0);
         setExit(true);
@@ -94,7 +94,7 @@ public class JailAlley extends Place {
         
         if (quest.getState().equals(BeatUpMarekDravis.States.KICKED_GRATES_TO_JAIL_CELL)) {
             notice(String.format("The gratings to %s's cell has been kicked loose. It's " +
-            		"possible for a person to climb through it.", mareks));
+                	"possible for a person to climb through it.", mareks));
             
             return;
         }

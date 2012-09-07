@@ -53,8 +53,8 @@ public class MareksCell extends Place {
         
         String mareks = CharacterNames.BlackWater.MAREK_DRAVIS_SHORT;
         String str = String.format("You kick at the gratings to %s's cell. After a " +
-        		"couple of tries they break, leaving a fair-sized hole through " +
-        		"which a person could squeeze through.", mareks, mareks);
+            	"couple of tries they break, leaving a fair-sized hole through " +
+            	"which a person could squeeze through.", mareks, mareks);
         
         clear();
         notice(str);

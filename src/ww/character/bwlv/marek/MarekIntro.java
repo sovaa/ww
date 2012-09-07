@@ -42,7 +42,7 @@ public class MarekIntro {
                 
                 {
                     Conversation fight = stay.reply("I'm not leaving until either you've paid or " +
-                    		"half of your bones are broken.");
+                        	"half of your bones are broken.");
                     
                     fight.greet("Tough guy, ey? Let's see how good you are in a fight!");
                     fight.hostile(true);
@@ -107,7 +107,7 @@ public class MarekIntro {
             wit.end("Hahahah-- *cough* *cough* *wheeze*");
             
             wit.description(CharacterNames.BlackWater.MAREK_DRAVIS + " chokes on his food while " +
-            		"laughing and dies. you have some explaining to do to Buck...");
+                	"laughing and dies. you have some explaining to do to Buck...");
             
             intro.addReply(wit);
         }

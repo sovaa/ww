@@ -100,7 +100,7 @@ public class JailerLarry extends Character {
                 };
                 
                 persuade.setReply("(Skill: " + Skill.SPEECH + ") I'm the new health inspector. Can you " +
-                		"open the dungeon door so I can check on the prisoners conditions?");
+                    	"open the dungeon door so I can check on the prisoners conditions?");
                 
                 persuade.greet("Oh, right away mister! I assure you, the prisoners are as healthy as they can be!");
                 persuade.description(name + " unlocks the door to the dungeon.");
@@ -113,7 +113,7 @@ public class JailerLarry extends Character {
                         CharacterNames.BlackWater.BUCK + "?");
                 
                 speak.end("No! No one goes through unless they have the key! And " +
-                		"only I have the key, so only I can go through! Now scram!");
+                    	"only I have the key, so only I can go through! Now scram!");
             }
         }
         
@@ -162,9 +162,9 @@ public class JailerLarry extends Character {
             
             shout.setReply("<Shout as loud as possible>");
             shout.description(name + " wakes flailing with his arms, making his " +
-            		"chair tip over backwards. Little did he know that he'd put his sword " +
-            		"hilt-down in a bucked behind him. " + name + " is impaled on his sword " +
-            		"and dies a painful death, gurgling a curse at you.");
+                	"chair tip over backwards. Little did he know that he'd put his sword " +
+                	"hilt-down in a bucked behind him. " + name + " is impaled on his sword " +
+                	"and dies a painful death, gurgling a curse at you.");
             
             intro.addReply(shout);
         }

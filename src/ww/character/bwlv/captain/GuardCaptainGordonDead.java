@@ -31,9 +31,9 @@ public class GuardCaptainGordonDead {
         {
             Conversation gone = gordon.reply("No, he was nowhere to be found.");
             gone.greet(String.format("I thought as much... If he's left the village he can't have gotten far. " +
-            		"I'll send my men to look for him, they'll find him. Could you go and tell %s? " +
-            		"It would be good if he could keep an eye out for %s if he's stupid enought to " +
-            		"try and hide there.", buck, mareks));
+                	"I'll send my men to look for him, they'll find him. Could you go and tell %s? " +
+                	"It would be good if he could keep an eye out for %s if he's stupid enought to " +
+                	"try and hide there.", buck, mareks));
             
             Conversation ok = new Conversation() {
                 private static final long serialVersionUID = 1568404159481667939L;
@@ -43,9 +43,9 @@ public class GuardCaptainGordonDead {
                     Quest quest = player.getQuest(Quest.BUCK_BEAT_UP_MAREK_DRAVIS);
                     
                     quest.update(String.format("I told %s that I had found %s dead in %s' house. %s " +
-                    		"thought I should go and tell %s what happened, and to tell him to " +
-                    		"keep an eye out for %s.",
-                    		johns, gordons, mareks, johns, buck, mareks));
+                        	"thought I should go and tell %s what happened, and to tell him to " +
+                        	"keep an eye out for %s.",
+                        	johns, gordons, mareks, johns, buck, mareks));
                     
                     quest.setState(BeatUpMarekDravis.States.TOLD_JOHN_GORDON_DEAD);
                 }

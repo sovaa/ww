@@ -22,7 +22,7 @@ public class MarekInJailWaiting {
         };
         
         jail.greet("Go to the alley behind the jail and kick in the grates " +
-        		"after dark. And don't forget the rope!");
+            	"after dark. And don't forget the rope!");
         
         intros.add(jail);
     }

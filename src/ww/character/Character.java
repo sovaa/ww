@@ -30,26 +30,26 @@ public abstract class Character extends Common implements Serializable {
     protected boolean dead = false;
     protected boolean tradable = false;
     protected boolean gamble = false;
-	
+    
     public abstract void fight(Player player);
     public abstract void setPlace(Place place);
-	
-	public final void beginConversation(Player player) {
-		if (!isHostile()) {
-		    for (Conversation conversation : getConversations()) {
-		        if (conversation.condition(this, player)) {
-		            conversation.begin(this, player);
-		            break;
-		        }
-		    }
-			
-			return;
-		}
-		
-		fight(player);
-	}
-	
-	protected final void setPlace(Place place, String id) {
+    
+    public final void beginConversation(Player player) {
+    	if (!isHostile()) {
+    	    for (Conversation conversation : getConversations()) {
+    	        if (conversation.condition(this, player)) {
+    	            conversation.begin(this, player);
+    	            break;
+    	        }
+    	    }
+    		
+    		return;
+    	}
+    	
+    	fight(player);
+    }
+    
+    protected final void setPlace(Place place, String id) {
         if (this.place != null) {
             this.place.removeCharacter(id);
         }
@@ -57,7 +57,7 @@ public abstract class Character extends Common implements Serializable {
         this.place = place;
         
         place.addCharacter(id, this);
-	}
+    }
     
     public List<Conversation> getConversations() {
         return intros;
@@ -106,11 +106,11 @@ public abstract class Character extends Common implements Serializable {
     public boolean isHostile() {
         return hostile;
     }
-	
-	public boolean isTradable() {
-	    return tradable;
-	}
-	
+    
+    public boolean isTradable() {
+        return tradable;
+    }
+    
     public void setAliases(Set<String> aliases) {
         this.aliases = aliases;
     }
