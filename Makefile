@@ -21,6 +21,7 @@ INSTALL_FILE    = $(INSTALL) -m $(MODE_FILES)
 INSTALL_DIR     = $(INSTALL) -m $(MODE_DIRS) -d
 TARGET_DIR      = target
 LANTERNA        = lib/lanterna-1.0.2.jar
+RLFORJ          = lib/rlforj.0.2.jar
 
 # Install modes 
 MODE_PROGS      = 555
@@ -33,7 +34,7 @@ JAVADOC         = javadoc
 JAR             = jar
 
 # Build flags
-JAVAC_FLAGS     = -cp lib/lanterna-1.0.2.jar:src -d $(TARGET_DIR)
+JAVAC_FLAGS     = -cp ${LANTERNA}:src:${RLFORJ} -d $(TARGET_DIR)
 JAVADOC_FLAGS   = -version -author
 JAR_FLAGS       = cvmf0 ../META-INF/MANIFEST.MF
 JIKES_DEP_FLAG	= +M
@@ -210,6 +211,7 @@ endef
 
 %.jar: $(JAVA_OBJS) $(RESOURCE_OBJS)
 	$(UNZIP) $(LANTERNA) -d $(TARGET_DIR)
+	$(UNZIP) $(RLFORJ) -d $(TARGET_DIR)
 	cd $(TARGET_DIR) && $(FIND) $(TOPLEVEL) $(JAR_OBJS) -print | $(XARGS) \
 	$(JAR) $(JAR_FLAGS) $(JAR_FILE) 
 
