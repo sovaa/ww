@@ -1,0 +1,120 @@
+
+== ACT 1 ==
+in the black water village, do the quest 'beat up marek dravis'
+receive stone insignia somehow
+
+== ACT 2 ==
+follow the clues about the stone insignia
+travel to a town to the east
+clues point to a person
+talk to person and learn that the insignia is an ancient artifact from a lost civilization
+told to speak to a historian in the capital
+
+== ACT 3 ==
+travel to the capital in the north
+visit the historian at the library(?)
+historian keeps the insignia for a couple of days
+come back and the historian is very excited, telling you that it's a dwarven insignia
+tells you that dwarves are believed to have existed long ago, but is mostly a myth, and not many believe it, nor have heard of them
+historian knows an old colleague who know a lot of the dwarves and collects artifacts from them
+
+== ACT 4 ==
+travel to colleague who's at an outpost further north in the mountains
+tells you more about dwarves
+shows you an old tunnel leading to a closed nondescript doorway, believed to be an entrace to one of the old dwarf strongholds
+door cannot be opened
+colleague tells you he's been trying to open it for a long while
+colleague tells you he think he knows how to open it, but he needs to translate the last piece of a riddle, written in a lost language
+colleague tells you he known one person who might be able to translate it
+translator lives far east, across the great dessert, in a criminal haven port town
+
+== ACT 5 ==
+travel to port town
+find translator
+translates riddle
+riddle tells you to find a key of a specific kind
+somehow learn that the key can be made by the swamp people in the south
+
+== ACT 6 ==
+travel to the swamp peoples lands
+find someone who can manufacture the key
+
+== ACT 7 ==
+return to colleague in the northern outpost with the key
+tell colleague you found the key
+open the door
+tunnel collapses behind you, cannot go back
+explore the old stronghold, which indeed looks like it's dwarven
+deep in the mountain another doorway appears, but newer than the rest of the architecture
+somehow gets in contact with someone on the other side
+doorway opens
+inside a small dwarven settlement
+
+== ACT 8 ==
+???
+
+
+
+:: BEAT UP MAREK DRAVIS ::
+
+talk to buck at the busty maid inn
+buck gives quest "beat up marek dravis"
+
+    go to guard captain john in the town square and tell him that buck buck is trying to get marek killed
+    john meets with you at the inn to talk to buck
+    you confirm that buck is trying to get marek killed
+    john throws buck in jail until an investigation can be made
+    ask john where jail is
+    go to jail
+    get through the locked door to the jail dungeon
+    talk to buck
+
+        sneak buck out of prison
+        buck tells you about why he really wants marek, the stone insignia
+        buck flees the village
+        visit mareks house
+        get the stone insignia from him either by beating him or killing him
+
+        get buck to give you something, and in exchange you will tell john that buck is innocent
+        buck tells you why he really wants marek, the stone insignia
+        visit mareks house
+        get the stone insignia from him either by beating him or killing him
+
+            tell john buck is innocent and buck gets released and returns to the inn
+
+            don't talk to john and buck stays in jail
+
+    go to marek's house
+
+        beat up marek
+        marek gives you a stone insignia and says something mysterious about it
+        marek flees the village
+        return to buck and receive reward
+
+        kill marek
+        loot stone insignia from marek
+        return to buck and receive reward
+
+    let john investigate marek
+    go to marek's house and find the investigator dead and marek gone
+    tell john about investigator
+    john sends out guards to search for marek
+    marek is found and thrown in jail until an investigation can begin
+    go to jail
+    talk to marek
+
+        sneak out marek and receive stone insignia for the help
+        marek flees the town
+
+        tell marek that you will get him out if he gives you something
+        receive stone insignia
+
+            sneak marek out of jail
+            marek flees town
+
+            leave marek in jail
+            marek stays in jail
+
+:: INVESTIGATE THE STONE INSIGNIA ::
+
+

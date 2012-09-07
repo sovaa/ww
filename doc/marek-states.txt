@@ -1,0 +1,16 @@
+john sends investigator to marek
+    investigator is found dead at marek's house, marek gone
+        john's guards finds marek and throws him in jail
+            get artifact from marek, either by letting him out or tricking him and leaving him there
+                get info from buck
+
+john arrests buck
+    get info on artifact, either by letting buck out or betraying him an letting him stay
+
+beat up marek
+    get artifact
+        get info from buck
+
+kill marek
+    get artifact
+        get info from buck
