@@ -4,9 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.lantern.terminal.Terminal.Color;
-
 import org.eldslott.ww.character.Character;
+import org.eldslott.ww.util.Color;
 import org.eldslott.ww.item.Gold;
 import org.eldslott.ww.item.Item;
 import org.eldslott.ww.player.Player;

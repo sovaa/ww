@@ -2,8 +2,7 @@ package org.eldslott.ww.action;
 
 import java.util.Map;
 
-import org.lantern.terminal.Terminal.Color;
-
+import org.eldslott.ww.util.Color;
 import org.eldslott.ww.player.Player;
 import org.eldslott.ww.reputation.Reputation;
 import org.eldslott.ww.util.Common;

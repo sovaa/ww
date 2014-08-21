@@ -3,8 +3,7 @@ package org.eldslott.ww.action;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.lantern.terminal.Terminal.Color;
-
+import org.eldslott.ww.util.Color;
 import org.eldslott.ww.item.Item;
 import org.eldslott.ww.player.Player;
 import org.eldslott.ww.util.Common;

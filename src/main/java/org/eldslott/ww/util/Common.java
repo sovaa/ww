@@ -11,8 +11,6 @@ import com.googlecode.lanterna.LanternaException;
 import com.googlecode.lanterna.gui.dialog.DialogButtons;
 import com.googlecode.lanterna.gui.dialog.DialogResult;
 import com.googlecode.lanterna.gui.dialog.MessageBox;
-import com.googlecode.lanterna.input.Key;
-import com.googlecode.lanterna.terminal.Terminal.Color;
 
 public class Common extends Input {
     private static final long serialVersionUID = -856287230406025561L;
@@ -470,20 +468,14 @@ public class Common extends Input {
             return false;
         }
         
-        if (what.endsWith(end)) {
-            return true;
-        }
-        
-        return false;
+        return what.endsWith(end);
     }
     
     public static final DialogResult dialogue(String title, String question, DialogButtons type) {
         DialogResult box;
         
         try {
-            box = MessageBox.showMessageBox(lanternTerminal.getGUIScreen(), 
-                    title, question, type);
-            
+            box = MessageBox.showMessageBox(guiScreen, title, question, type);
             refresh();
         }
         catch (LanternaException e) {

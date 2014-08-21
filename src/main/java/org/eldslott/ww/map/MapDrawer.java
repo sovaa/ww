@@ -1,5 +1,7 @@
 package org.eldslott.ww.map;
 
+public class MapDrawer {}
+/*
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -9,8 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.lantern.terminal.Terminal.Color;
-
+import org.eldslott.ww.common.Color;
 import rlforj.los.ILosBoard;
 import rlforj.math.Point2I;
 import org.eldslott.ww.util.Common;
@@ -254,3 +255,4 @@ public class MapDrawer extends Common implements ILosBoard  {
         return posy;
     }
 }
+*/

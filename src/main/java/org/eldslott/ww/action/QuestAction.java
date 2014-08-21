@@ -5,9 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.lantern.input.Key;
-import org.lantern.input.Key.Kind;
-
+import com.googlecode.lanterna.input.Key;
 import org.eldslott.ww.player.Player;
 import org.eldslott.ww.quests.Quest;
 import org.eldslott.ww.util.Common;
@@ -74,14 +72,14 @@ public class QuestAction extends Common implements Action {
             
             while (true) {
                 Key key = getKey();
-                Kind kind = key.getKind();
-                clearKeyQueue();
+                Key.Kind kind = key.getKind();
+                //clearKeyQueue();
                 
-                if (key == null || kind.equals(Kind.Escape) || kind.equals(Kind.Enter) || key.getCharacter() == 'q') {
+                if (key == null || kind.equals(Key.Kind.Escape) || kind.equals(Key.Kind.Enter) || key.getCharacter() == 'q') {
                     return;
                 }
                 
-                if (key.getKind().equals(Kind.ArrowDown)) {
+                if (key.getKind().equals(Key.Kind.ArrowDown)) {
                     if (row > screen.getTerminalSize().getRows()) {
                         if (row - 4 > screen.getTerminalSize().getRows()) {
                             offset += 4;
@@ -94,7 +92,7 @@ public class QuestAction extends Common implements Action {
                     }
                 }
                 
-                if (key.getKind().equals(Kind.ArrowUp)) {
+                if (key.getKind().equals(Key.Kind.ArrowUp)) {
                     if (offset > 0) {
                         if (offset - 4 > 0) {
                             offset -= 4;

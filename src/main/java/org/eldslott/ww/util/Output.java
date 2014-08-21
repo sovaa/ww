@@ -1,32 +1,30 @@
 package org.eldslott.ww.util;
 
+import com.googlecode.lanterna.LanternaException;
+import com.googlecode.lanterna.TerminalFacade;
+import com.googlecode.lanterna.gui.GUIScreen;
+import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.screen.ScreenCharacterStyle;
+import com.googlecode.lanterna.terminal.Terminal;
+import com.googlecode.lanterna.terminal.TerminalSize;
+import org.eldslott.ww.Game;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
 
-import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.LanternaException;
-import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.terminal.Terminal.Color;
-import com.googlecode.lanterna.terminal.TerminalSize;
-
-import org.eldslott.ww.Game;
-import org.eldslott.ww.CustomTerminal;
-import org.eldslott.ww.CustomTerminalFactory;
-
 public class Output implements Serializable {
     private static final long serialVersionUID = -3601898163633070734L;
     
     private static final Logger LOG = new Logger(Output.class);
-    
-    public static LanternTerminal lanternTerminal;
-    public static EnumSet<Terminal.Style> set;
-    
+
+    public static EnumSet<ScreenCharacterStyle> set;
+
     public static Screen screen;
-    public static CustomTerminal terminal;
+    public static Terminal terminal;
+    public static GUIScreen guiScreen;
     
     private static final int TOP_ROW = 4;
     private static final int TOP_COLUMN = 0;
@@ -53,19 +51,18 @@ public class Output implements Serializable {
     
     public static final void init() {
         try {
-            Common.lanternTerminal = new LanternTerminal(new CustomTerminalFactory());
-            
-            Common.set = EnumSet.allOf(Terminal.Style.class);
-            set.add(Style.Underline);
-            
-            Common.screen = lanternTerminal.getScreen();
-            Common.terminal = (CustomTerminal)lanternTerminal.getUnderlyingTerminal();
-            
-            lanternTerminal.start();
-            
-            //Common.screen.startScreen();
+            Common.guiScreen = TerminalFacade.createGUIScreen();
+            //Common.lanternTerminal = new LanternTerminal(new CustomTerminalFactory());
+
+            Common.set = EnumSet.allOf(ScreenCharacterStyle.class);
+            set.add(ScreenCharacterStyle.Underline);
+
+            Common.screen = Common.guiScreen.getScreen();
+            Common.terminal = Common.guiScreen.getScreen().getTerminal();
+
+            Common.guiScreen.getScreen().startScreen();
         }
-        catch (LanternException e) {
+        catch (LanternaException e) {
             e.printStackTrace();
         }
     }
@@ -178,7 +175,7 @@ public class Output implements Serializable {
     
     public static final void print(String s) {
         if (getRow() >= TOP_ROW - 1) {
-            screen.putString(getCol(), getRow(), s, Color.WHITE, Color.DEFAULT, Common.set);
+            screen.putString(getCol(), getRow(), s, Color.WHITE.toTerminalColor(), Color.DEFAULT.toTerminalColor(), Common.set);
         }
         
         screen.setCursorPosition(getCol() + s.length(), getRow());
@@ -197,7 +194,7 @@ public class Output implements Serializable {
             background = Color.DEFAULT;
         }
         
-        screen.putString(col, row, s, foreground, background, Common.set);
+        screen.putString(col, row, s, foreground.toTerminalColor(), background.toTerminalColor(), Common.set);
     }
     
     public static final void print(List<Clear> clears, String s) {
@@ -229,7 +226,7 @@ public class Output implements Serializable {
         }
 
         if (getRow() >= TOP_ROW - 1) {
-            screen.putString(getCol(), getRow(), s, foreground, background, Common.set);
+            screen.putString(getCol(), getRow(), s, foreground.toTerminalColor(), background.toTerminalColor(), Common.set);
         }
         
         screen.setCursorPosition(getCol() + s.length(), getRow());
@@ -249,7 +246,7 @@ public class Output implements Serializable {
         }
 
         if (getRow() >= TOP_ROW - 1) {
-            screen.putString(getCol(), getRow(), s, foreground, background, Common.set);
+            screen.putString(getCol(), getRow(), s, foreground.toTerminalColor(), background.toTerminalColor(), Common.set);
         }
         
         screen.setCursorPosition(getCol() + s.length(), getRow());
@@ -277,7 +274,7 @@ public class Output implements Serializable {
             clears.add(new Clear(getCol(), getRow()));
 
             if (getRow() >= TOP_ROW - 1) {
-                screen.putString(getCol(), getRow(), String.valueOf(c), foreground, background, Common.set);
+                screen.putString(getCol(), getRow(), String.valueOf(c), foreground.toTerminalColor(), background.toTerminalColor(), Common.set);
             }
             
             increaseColumn();
@@ -302,7 +299,7 @@ public class Output implements Serializable {
             }
             
             if (getRow() >= TOP_ROW - 1) {
-                screen.putString(getCol(), getRow(), String.valueOf(c), foreground, background, Common.set);
+                screen.putString(getCol(), getRow(), String.valueOf(c), foreground.toTerminalColor(), background.toTerminalColor(), Common.set);
             }
             
             increaseColumn();
@@ -334,7 +331,7 @@ public class Output implements Serializable {
     public static final void clearLine(int line) {
         int cols = screen.getTerminalSize().getColumns() - 1;
         while (--cols >= 0) {
-            screen.putString(cols, line, " ", Color.WHITE, Color.DEFAULT, set);
+            screen.putString(cols, line, " ", Color.WHITE.toTerminalColor(), Color.DEFAULT.toTerminalColor(), set);
         }
     }
     
@@ -345,13 +342,9 @@ public class Output implements Serializable {
                     Thread.sleep(10);
                 }
             }
-            
             screen.refresh();
         }
-        catch (LanternException e) {
-            LOG.error(e.getMessage(), e);
-        }
-        catch (InterruptedException e) {
+        catch (LanternaException | InterruptedException e) {
             LOG.error(e.getMessage(), e);
         }
     }
@@ -605,7 +598,7 @@ public class Output implements Serializable {
         String eraser = builder.toString();
         
         for (int y = 0; y < terminalSize.getRows(); y++) {
-            screen.putString(0, y, eraser, Color.WHITE, Color.DEFAULT, Common.set);
+            screen.putString(0, y, eraser, Color.WHITE.toTerminalColor(), Color.DEFAULT.toTerminalColor(), Common.set);
         }
 
         screen.setCursorPosition(TOP_COLUMN, TOP_ROW);

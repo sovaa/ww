@@ -16,7 +16,7 @@ desc "The WW Project"
 define "ww" do
   project.version = VERSION_NUMBER
   project.group = GROUP
-  package(:jar).with :manifest=>_('META-INF/MANIFEST.MF')
+  package(:jar).with(:manifest=>_('META-INF/MANIFEST.MF')).merge(LANTERNA)
   compile.with LANTERNA
   manifest["Implementation-Vendor"] = COPYRIGHT
 end

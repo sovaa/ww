@@ -42,11 +42,7 @@ public class Input extends Output {
     public static String input() {
         return input(false);
     }
-    
-    public static void clearKeyQueue() {
-        terminal.clearKeyQueue();
-    }
-    
+
     public static void pause() {
         print("  <Press enter to continue...>");
         

@@ -2,8 +2,7 @@ package org.eldslott.ww.generator;
 
 import java.util.Random;
 
-import org.lantern.terminal.Terminal.Color;
-
+import org.eldslott.ww.util.Color;
 import org.eldslott.ww.attribute.Attribute;
 import org.eldslott.ww.attribute.Dexterity;
 import org.eldslott.ww.attribute.Intellect;

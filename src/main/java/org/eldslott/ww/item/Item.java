@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import org.lantern.terminal.Terminal.Color;
-
+import org.eldslott.ww.util.Color;
 import org.eldslott.ww.attribute.Attribute;
 import org.eldslott.ww.player.Player;
 import org.eldslott.ww.util.Common;

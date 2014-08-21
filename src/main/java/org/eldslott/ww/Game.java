@@ -4,8 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.lantern.LanternException;
-
+import com.googlecode.lanterna.LanternaException;
 import org.eldslott.ww.action.ActionHandler;
 import org.eldslott.ww.action.LootAction;
 import org.eldslott.ww.character.CharacterKeys;
@@ -41,9 +40,7 @@ public class Game extends ActionHandler {
     public static void main (String[] arg) throws IOException {
         try {
             new Game().main();
-            
             screen.stopScreen();
-            lanternTerminal.stopAndRestoreTerminal();
         }
         catch (Exception e) {
             LOG.error(e.getMessage(), e);
@@ -53,11 +50,10 @@ public class Game extends ActionHandler {
 
     /**
      * Main game loop.
-     * @throws LanternException 
+     * @throws LanternaException
      */
-    private void main() throws IOException, LanternException {
+    private void main() throws IOException, LanternaException {
         gameInit();
-    	
     	clear();
 
     	while (true) {

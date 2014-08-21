@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.lantern.input.Key;
-
+import com.googlecode.lanterna.input.Key;
 import org.eldslott.ww.item.Item;
 import org.eldslott.ww.item.Item.Slot;
 import org.eldslott.ww.item.Item.Use;

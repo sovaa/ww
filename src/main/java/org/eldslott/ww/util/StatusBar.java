@@ -1,7 +1,5 @@
 package org.eldslott.ww.util;
 
-import org.lantern.terminal.Terminal.Color;
-
 import org.eldslott.ww.player.Player;
 
 public class StatusBar extends Common implements Runnable {
@@ -174,18 +172,18 @@ public class StatusBar extends Common implements Runnable {
     private static void statusOne(String str) {
         clearLine(0);
         
-        screen.putString(0, 0, str, Color.WHITE, Color.DEFAULT, set);
+        screen.putString(0, 0, str, Color.WHITE.toTerminalColor(), Color.DEFAULT.toTerminalColor(), set);
     }
     
     private static void statusTwo(String str) {
         clearLine(1);
         
-        screen.putString(0, 1, str, Color.WHITE, Color.DEFAULT, set);
+        screen.putString(0, 1, str, Color.WHITE.toTerminalColor(), Color.DEFAULT.toTerminalColor(), set);
         
         {
             int cols = screen.getTerminalSize().getColumns() - 1;
             while (--cols >= 0) {
-                screen.putString(cols, 2, "-", Color.WHITE, Color.DEFAULT, set);
+                screen.putString(cols, 2, "-", Color.WHITE.toTerminalColor(), Color.DEFAULT.toTerminalColor(), set);
             }
         }
     }

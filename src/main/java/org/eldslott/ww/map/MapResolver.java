@@ -1,12 +1,13 @@
 package org.eldslott.ww.map;
 
+public class MapResolver{}
+/*
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.lantern.terminal.Terminal.Color;
-
+import org.eldslott.ww.common.Color;
 import org.eldslott.ww.location.Area;
 import org.eldslott.ww.player.Player;
 import org.eldslott.ww.util.Common;
@@ -88,3 +89,4 @@ public class MapResolver extends Common {
         }
     }
 }
+*/

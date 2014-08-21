@@ -1,7 +1,8 @@
 package org.eldslott.ww.map;
 
-import org.lantern.input.Key;
-
+public class MapHandler{}
+/*
+import com.googlecode.lanterna.input.Key;
 import rlforj.los.IFovAlgorithm;
 import rlforj.los.PrecisePermissive;
 import org.eldslott.ww.player.Player;
@@ -99,3 +100,4 @@ public class MapHandler extends Common {
         return true;
     }
 }
+*/

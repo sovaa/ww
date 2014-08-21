@@ -8,10 +8,8 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.lantern.gui.dialog.DialogButtons;
-import org.lantern.gui.dialog.DialogResult;
-import org.lantern.terminal.Terminal.Color;
-
+import com.googlecode.lanterna.gui.dialog.DialogButtons;
+import com.googlecode.lanterna.gui.dialog.DialogResult;
 import org.eldslott.ww.Game;
 import org.eldslott.ww.action.HelpAction;
 import org.eldslott.ww.player.Player;

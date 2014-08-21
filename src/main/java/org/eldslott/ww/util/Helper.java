@@ -5,8 +5,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
-import org.lantern.terminal.Terminal.Color;
-
 import org.eldslott.ww.character.Character;
 import org.eldslott.ww.location.Area;
 import org.eldslott.ww.location.Place;

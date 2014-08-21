@@ -132,13 +132,13 @@ public class ActionHandler extends Common {
     }
     
     private boolean map(Player player) {
-        MapResolver.show(player);
+        //MapResolver.show(player);
         
         return false;
     }
     
     private boolean walk(Player player) {
-        MapHandler.map(player);
+        //MapHandler.map(player);
         
         return false;
     }
