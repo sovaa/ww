@@ -12,6 +12,7 @@ import org.eldslott.ww.Game;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.EnumSet;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -52,15 +53,19 @@ public class Output implements Serializable {
     public static final void init() {
         try {
             Common.guiScreen = TerminalFacade.createGUIScreen();
+            Common.guiScreen.getScreen().startScreen();
             //Common.lanternTerminal = new LanternTerminal(new CustomTerminalFactory());
 
-            Common.set = EnumSet.allOf(ScreenCharacterStyle.class);
-            set.add(ScreenCharacterStyle.Underline);
+            Common.set = EnumSet.noneOf(ScreenCharacterStyle.class);
+                    /*EnumSet.allOf(ScreenCharacterStyle.class);
+            set.remove(ScreenCharacterStyle.Underline);
+            set.remove(ScreenCharacterStyle.Blinking);
+            set.remove(ScreenCharacterStyle.Reverse);
+            set.remove(ScreenCharacterStyle.Bold);*/
 
             Common.screen = Common.guiScreen.getScreen();
             Common.terminal = Common.guiScreen.getScreen().getTerminal();
 
-            Common.guiScreen.getScreen().startScreen();
         }
         catch (LanternaException e) {
             e.printStackTrace();

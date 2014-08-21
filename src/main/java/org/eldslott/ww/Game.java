@@ -54,14 +54,14 @@ public class Game extends ActionHandler {
      */
     private void main() throws IOException, LanternaException {
         gameInit();
-    	clear();
+        clear();
 
     	while (true) {
     	    look();
     	    places();
             characters();
             loot();
-            
+
             refresh();
             action(player);
     	}
@@ -88,7 +88,6 @@ public class Game extends ActionHandler {
         Commands.init();
         CharacterNames.init();
         Reputation.init();
-        
         player = initPlayer();
     }
     
@@ -104,7 +103,7 @@ public class Game extends ActionHandler {
         player.setArea(startArea);
         player.setPlace(startArea.getPlace());
 
-        String questName = Quest.BUCK_BEAT_UP_MAREK_DRAVIS;
+        /*String questName = Quest.BUCK_BEAT_UP_MAREK_DRAVIS;
         Quest quest = Quest.getQuest(questName);
         quest.setState(BeatUpMarekDravis.States.AGREED_TO_BUST_OUT_MAREK);
         Area.allPlaces.get(PlaceKeys.BlackWater.THE_JAIL).setDiscovered(true, false);
@@ -114,7 +113,7 @@ public class Game extends ActionHandler {
         player.addQuest(quest);
         Area.allPlaces.get(PlaceKeys.BlackWater.THE_JAIL_DUNGEON).setLocked(false);
         Area.allCharacters.get(CharacterKeys.BlackWater.MAREK_DRAVIS).setPlace(
-                Area.allPlaces.get(PlaceKeys.BlackWater.THE_JAIL_DUNGEON));
+                Area.allPlaces.get(PlaceKeys.BlackWater.THE_JAIL_DUNGEON));*/
         
         clear();
         
